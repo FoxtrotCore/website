@@ -18,8 +18,8 @@ export class MenuComponent implements OnInit {
         url: '/'
       },
       {
-        name: 'About Us',
-        url: '/about-us'
+        name: 'Our Work',
+        url: '/our-work'
       },
       {
         name: 'Subtitles',

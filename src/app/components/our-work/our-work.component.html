@@ -1,0 +1,25 @@
+<div class="content">
+  <p>Our project was a combination of two complimenting sub-projects making up the whole of The Foxtrot Fanatics</p>
+
+  <div id="projects">
+    <div class="project">
+      <h4>Upscaling Project</h4>
+      <ul><li *ngFor="let entry of upscale_project">{{entry}}</li></ul>
+    </div>
+
+    <div class="project">
+      <h4>Transcription Project</h4>
+      <ul><li *ngFor="let entry of transcription_project">{{entry}}</li></ul>
+    </div>
+
+    <div class="project">
+      <h4>Audio Languages Included:</h4>
+      <ul><li *ngFor="let entry of audio_lang">{{entry}}</li></ul>
+    </div>
+
+    <div class="project">
+      <h4>Subtitles Languages Included: </h4>
+      <ul><li *ngFor="let entry of subtitle_lang">{{entry}}</li></ul>
+    </div>
+  </div>
+</div>

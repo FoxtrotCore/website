@@ -10,8 +10,20 @@ ul a {
 ul a::before { content: '['; }
 ul a::after { content: ']'; }
 ul a::before, ul a::after  { opacity: 0; padding: 0; margin: 0 1em; transition: 0.6s; }
-ul a:hover::before, ul a:hover::after, a.active { opacity: 1; padding: 0 1em; margin: 0; }
+ul a:hover::before, ul a:hover::after { opacity: 1; padding: 0 1em; margin: 0; }
 
 ul a:hover {
   text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+}
+
+@media (max-width: 330px) {
+  ul {
+    display: none;
+  }
+}
+
+@media (max-width: 750px) {
+  ul a { padding: 0; }
+  ul a::before, ul a::after  { padding: 0; margin: 0 0.1em; }
+  ul a:hover::before, ul a:hover::after { padding: 0 0.1em; margin: 0; }
 }
