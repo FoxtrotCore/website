@@ -24,7 +24,11 @@ export class MenuComponent implements OnInit {
       {
         name: 'Subtitles',
         url: '/subtitles'
-      }
+      },
+      {
+        name: 'FAQ',
+        url: '/faq'
+      },
     ]
   }
 

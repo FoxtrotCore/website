@@ -1,0 +1,20 @@
+.long-info {
+  padding-top: 0.5em;
+  text-indent: 4em;
+  text-align: left;
+}
+
+.section {
+  width: 60%;
+  margin-top: 2em;
+  padding-top: 1em;
+  border-top: 1px solid black;
+}
+
+.content {
+  margin: 5vh auto;
+  padding: 5vw;
+  width: 80vw;
+  background-color: rgba(220, 220, 220, 0.9);
+  box-shadow: black 3em 3em 100px;
+}

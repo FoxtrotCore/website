@@ -5,12 +5,15 @@ import { HomeComponent } from './components/home/home.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { FaqComponent } from './components/faq/faq.component';
 import { SubtitlesComponent } from './components/subtitles/subtitles.component';
+import { ErrorComponent } from './components/error/error.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'about-us', component: AboutUsComponent },
-  { path: 'faq', component: FaqComponent },
-  { path: 'subtitles', component: SubtitlesComponent }
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent, data: { state: 'home' } },
+  { path: 'about-us', component: AboutUsComponent, data: { state: 'about-us' }  },
+  { path: 'faq', component: FaqComponent, data: { state: 'faq' }  },
+  { path: 'subtitles', component: SubtitlesComponent, data: { state: 'subtitles' }  },
+  { path: '**', component: ErrorComponent }
 ];
 
 @NgModule({
