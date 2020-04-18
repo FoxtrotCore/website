@@ -6,9 +6,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { HomeComponent } from './components/home/home.component';
-import { AboutUsComponent } from './components/about-us/about-us.component';
-import { FaqComponent } from './components/faq/faq.component';
+import { OurWorkComponent } from './components/our-work/our-work.component';
 import { SubtitlesComponent } from './components/subtitles/subtitles.component';
+import { FaqComponent } from './components/faq/faq.component';
 import { ErrorComponent } from './components/error/error.component';
 
 @NgModule({
@@ -16,9 +16,9 @@ import { ErrorComponent } from './components/error/error.component';
     AppComponent,
     MenuComponent,
     HomeComponent,
-    AboutUsComponent,
-    FaqComponent,
+    OurWorkComponent,
     SubtitlesComponent,
+    FaqComponent,
     ErrorComponent
   ],
   imports: [
