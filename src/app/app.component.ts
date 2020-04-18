@@ -1,8 +1,10 @@
 import { Component, Renderer2, ViewChild, AfterViewInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import { routerTransition } from './app-routing-animation';
 
 @Component({
   selector: 'app-root',
+  animations: [ routerTransition ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
@@ -33,5 +35,9 @@ export class AppComponent implements AfterViewInit {
 
   setStyle(element, style, value): void {
     this.renderer.setStyle(this.parent.nativeElement.querySelector(element), style, value);
+  }
+
+  getState(outlet) {
+    return outlet.activatedRouteData.state;
   }
 }
