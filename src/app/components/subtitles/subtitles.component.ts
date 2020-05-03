@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { AppComponent } from '../../app.component';
+import { FtfApiService } from '../../services/ftf-api.service';
 
 @Component({
   selector: 'app-subtitles',
@@ -8,22 +8,19 @@ import { AppComponent } from '../../app.component';
   styleUrls: ['./subtitles.component.css']
 })
 export class SubtitlesComponent implements OnInit {
-  available: Object[];
+  available: any;
 
-  constructor(@Inject(AppComponent) private parent: AppComponent, private http: HttpClient) {
+  constructor(@Inject(AppComponent) private parent: AppComponent, private api: FtfApiService) {
     this.parent.page_title = "Subtitles";
     this.parent.banner_title = "FTF Subtitles";
     this.parent.updatePage();
 
-    (async () => {
-      this.available = await this.getAvailable();
-    })();
-  }
-
-  async getAvailable() {
-    var res = await this.http.get('https://api.foxtrotfanatics.com/available', {});
-    console.log(res);
-    return [];
+    this.api.getAvailable().subscribe(
+      data => {
+        console.log("Got data: " + JSON.stringify(data))
+      },
+      error => console.error(JSON.stringify(error))
+    );
   }
 
   ngOnInit(): void {}
