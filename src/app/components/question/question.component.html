@@ -1,0 +1,11 @@
+<div #parent class="card">
+  <div class="banner" (click)="toggle_collapse()">
+    <button type="button" name="close">X</button>
+    <h4>{{question}}</h4>
+  </div>
+
+  <div class="content">
+    <p><span class="label">Short Answer:</span>{{short_answer}}</p>
+    <p><span class="label">Long Answer:</span>{{long_answer}}</p>
+  </div>
+</div>

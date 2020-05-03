@@ -10,6 +10,7 @@ import { OurWorkComponent } from './components/our-work/our-work.component';
 import { SubtitlesComponent } from './components/subtitles/subtitles.component';
 import { FaqComponent } from './components/faq/faq.component';
 import { ErrorComponent } from './components/error/error.component';
+import { QuestionComponent } from './components/question/question.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ErrorComponent } from './components/error/error.component';
     OurWorkComponent,
     SubtitlesComponent,
     FaqComponent,
-    ErrorComponent
+    ErrorComponent,
+    QuestionComponent
   ],
   imports: [
     BrowserModule,
