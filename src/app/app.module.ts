@@ -11,6 +11,7 @@ import { SubtitlesComponent } from './components/subtitles/subtitles.component';
 import { FaqComponent } from './components/faq/faq.component';
 import { ErrorComponent } from './components/error/error.component';
 import { QuestionComponent } from './components/question/question.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { QuestionComponent } from './components/question/question.component';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
