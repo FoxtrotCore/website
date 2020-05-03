@@ -1,7 +1,7 @@
 #banner {
   padding: 2em 0;
   height: 30vh;
-  background-image: url(src/imgs/banners/2_banner.png);
+  background-image: url(src/assets/imgs/banners/2_banner.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -19,7 +19,7 @@
 
 #logo {
   margin: 0 auto;
-  background-image: url(../assets/imgs/logos/ftf-monochrome.png);
+  background-image: url(src/assets/imgs/logos/ftf-monochrome.png);
 }
 
 h1 {
