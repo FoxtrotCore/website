@@ -1,5 +1,4 @@
-import { Component, Input, Renderer2, ViewChild, OnInit, AfterViewInit } from '@angular/core';
-import { FaqQuestion } from 'src/app/models/FaqQuestion';
+import { Component, Input, Renderer2, ViewChild, OnInit } from '@angular/core';
 
 function sleep(delay: number) { return new Promise( resolve => setTimeout(resolve, delay) ); }
 

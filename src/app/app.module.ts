@@ -12,6 +12,7 @@ import { FaqComponent } from './components/faq/faq.component';
 import { ErrorComponent } from './components/error/error.component';
 import { QuestionComponent } from './components/question/question.component';
 import { HttpClientModule } from '@angular/common/http';
+import { SubFetchComponent } from './components/sub-fetch/sub-fetch.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { HttpClientModule } from '@angular/common/http';
     SubtitlesComponent,
     FaqComponent,
     ErrorComponent,
-    QuestionComponent
+    QuestionComponent,
+    SubFetchComponent
   ],
   imports: [
     BrowserModule,

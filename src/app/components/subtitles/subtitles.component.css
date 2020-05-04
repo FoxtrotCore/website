@@ -6,6 +6,15 @@
   box-shadow: black 3em 3em 100px;
 }
 
+app-sub-fetch { margin: 1em; }
+
+#buttons {
+  width: 40vw;
+  display: grid;
+  grid-template-areas: 'b1 b2 b3 b4';
+
+}
+
 @media (max-width: 470px) {
   .content {
     width: 100vw;
@@ -15,4 +24,9 @@
   }
 
   .content p { padding: 1em 2em; }
+
+  #buttons {
+    width: 100vw;
+    grid-template-areas: 'b1 b2 b3';
+  }
 }

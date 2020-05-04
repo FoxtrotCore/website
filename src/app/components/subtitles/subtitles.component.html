@@ -1,3 +1,8 @@
 <div class="content">
-  <p>subtitles works!</p>
+  <h3>Available:</h3>
+  <div id="buttons">
+    <app-sub-fetch *ngFor="let ep of available.available_episodes" ep="{{ep}}" available="true"></app-sub-fetch>
+  </div>
+  <!-- <h3>Missing:</h3>
+  <app-sub-fetch *ngFor="let ep of available.missing_episodes" ep="{{ep}}" available="false"></app-sub-fetch> -->
 </div>

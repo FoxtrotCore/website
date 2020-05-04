@@ -1,24 +1,23 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
-import { catchError, tap, map } from 'rxjs/operators';
+import { throwError, Observable } from 'rxjs';
 import { AvailabilityForm } from 'src/app/models/AvailabilityForm';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FtfApiService {
-  base_url: String;
+  readonly base_url = "https://api.foxtrotfanatics.com";
 
-  constructor(private http: HttpClient) { this.base_url = "http://api.foxtrotfanatics.com"; }
+  constructor(private http: HttpClient) {}
 
-  getAvailable(): Observable<any> {
-    return this.http.get<any>(this.base_url + '/available', { responseType: 'json',
-                                                              headers: {'Access-Control-Allow-Origin': '*'}})
-      .pipe(
-        tap(data => data),
-        catchError(this.handle_error)
-      );
+  getAvailable(): Observable<AvailabilityForm> {
+    const uri = '/available';
+    return this.http.get<AvailabilityForm>(this.base_url + uri, {observe: 'body'});
+  }
+
+  getDownloadLink(ep: Number) {
+    return this.base_url + '/script?episode=' + ep;
   }
 
   handle_error(e: HttpErrorResponse) { return throwError(e); }
