@@ -6,14 +6,18 @@
   box-shadow: black 3em 3em 100px;
 }
 
-app-sub-fetch { margin: 1em; }
-
-#buttons {
-  width: 40vw;
-  display: grid;
-  grid-template-areas: 'b1 b2 b3 b4';
-
+table, th, td {
+  border: solid black 1px;
+  border-collapse: collapse;
 }
+
+table { width: 100%; }
+th, td { height: 50%; }
+
+.banner { background-color: rgba(140, 140, 140, 0.9); }
+.entry { background-color: rgba(140, 140, 140, 0.4); }
+
+button { margin-bottom: 2em; }
 
 @media (max-width: 470px) {
   .content {

@@ -15,7 +15,7 @@ export class MenuComponent implements OnInit {
     this.entries = [
       {
         name: 'Home',
-        url: '/'
+        url: '/home'
       },
       {
         name: 'Our Work',

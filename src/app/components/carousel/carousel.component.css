@@ -1,0 +1,23 @@
+#carousel {
+  width: 68vw;
+  height: 45vw;
+  padding-bottom: 2em;
+}
+
+img {
+  width: 60vw;
+  height: 45vw;
+  display: none;
+}
+
+button {
+  width: 4vw;
+  height: 100%;
+  margin: auto 0;
+  display: inline;
+  background-color: rgba(140, 140, 140, 0.9);
+  border-width: 0;
+}
+
+#left { float: left; }
+#right { float: right; }
