@@ -1,29 +1,51 @@
-ul a {
-    display: inline-block;
-    padding: 0 3vw;
-    color: rgba(220,220,220,1);
-    transition: 1s;
+div { height : 17%; }
 
-    text-decoration: none;
+.container a::before { content: '['; }
+.container a::after { content: ']'; }
+.container a::before, .container a::after  { opacity: 0; padding: 0; margin: 0 1em; transition: 0.6s; }
+.container:hover a::before, .container:hover a::after { opacity: 1; padding: 0 1em; margin: 0; }
+
+.container:hover > a, .active {
+  text-shadow: 0 0 10px #000, 0 0 15px #000, 0 0 20px #ff4da6, 0 0 25px #ff4da6, 0 0 30px #ff4da6, 0 0 35px #ff4da6, 0 0 40px #ff4da6;
 }
 
-ul a::before { content: '['; }
-ul a::after { content: ']'; }
-ul a::before, ul a::after  { opacity: 0; padding: 0; margin: 0 1em; transition: 0.6s; }
-ul a:hover::before, ul a:hover::after { opacity: 1; padding: 0 1em; margin: 0; }
-
-ul a:hover {
-  text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+.container {
+  display: inline-block;
+  z-index: 128;
+  display: inline-block;
+  padding: 0 3vw;
+  color: rgba(220,220,220,1);
+  transition: 0.6s;
+  text-decoration: none;
 }
 
-@media (max-width: 330px) {
-  ul {
+.container > img {
+  z-index: 8;
+  display: list-item;
+  opacity: 0;
+  width: 40px;
+
+  position: relative;
+  top: -3em;
+
+  -webkit-filter: drop-shadow(0 0 1px #ff4da6);
+  -moz-filter: drop-shadow(0 0 20px #ff4da6);
+  -ms-filter: drop-shadow(0 0 20px #ff4da6);
+  -o-filter: drop-shadow(0 0 20px #ff4da6);
+
+  transition: 1s;
+}
+
+.container:hover > img { opacity: 0.2; }
+
+@media (min-width: 0px) and (max-width: 420px) {
+  .container {
     display: none;
   }
 }
 
-@media (max-width: 750px) {
-  ul a { padding: 0; }
-  ul a::before, ul a::after  { padding: 0; margin: 0 0.1em; }
-  ul a:hover::before, ul a:hover::after { padding: 0 0.1em; margin: 0; }
+@media (min-width: 420px) and (max-width: 750px) {
+  .container a::before, .container a::after { content: ''; }
+  .container { padding: 0; margin: 0; }
+  .container > img { height: 0; }
 }

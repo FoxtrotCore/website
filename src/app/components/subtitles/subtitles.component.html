@@ -1,8 +1,22 @@
-<div class="content">
-  <h3>Available:</h3>
-  <div id="buttons">
-    <app-sub-fetch *ngFor="let ep of available.available_episodes" ep="{{ep}}" available="true"></app-sub-fetch>
-  </div>
-  <!-- <h3>Missing:</h3>
-  <app-sub-fetch *ngFor="let ep of available.missing_episodes" ep="{{ep}}" available="false"></app-sub-fetch> -->
+<div #root class="content">
+  <button type="button" name="download-all" (click)="downloadAll()">Download All Subtitles</button>
+
+  <table>
+    <tr class='banner'>
+      <th>Episode</th>
+      <th>Title</th>
+      <th>US Air-Date</th>
+      <th>French Air-Date</th>
+      <th>Production Code</th>
+      <th>Subtitle File</th>
+    </tr>
+    <tr class="entry" id="entry-{{entry}}" *ngFor="let entry of available.available_episodes">
+      <td>{{entry}}</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td><a href={{true}}>ASS</a></td>
+    </tr>
+  </table>
 </div>

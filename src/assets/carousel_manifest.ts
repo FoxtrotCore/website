@@ -1,0 +1,19 @@
+export const manifest = [
+  "../../assets/imgs/carousel_imgs/1.png",
+  "../../assets/imgs/carousel_imgs/2.png",
+  "../../assets/imgs/carousel_imgs/3.png",
+  "../../assets/imgs/carousel_imgs/4.png",
+  "../../assets/imgs/carousel_imgs/5.png",
+  "../../assets/imgs/carousel_imgs/6.png",
+  "../../assets/imgs/carousel_imgs/7.png",
+  "../../assets/imgs/carousel_imgs/8.png",
+  "../../assets/imgs/carousel_imgs/9.png",
+  "../../assets/imgs/carousel_imgs/10.png",
+  "../../assets/imgs/carousel_imgs/11.png",
+  "../../assets/imgs/carousel_imgs/12.png",
+  "../../assets/imgs/carousel_imgs/13.png",
+  "../../assets/imgs/carousel_imgs/14.png",
+  "../../assets/imgs/carousel_imgs/15.png",
+  "../../assets/imgs/carousel_imgs/16.png",
+  "../../assets/imgs/carousel_imgs/17.png"
+]

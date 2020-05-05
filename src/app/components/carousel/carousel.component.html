@@ -1,0 +1,6 @@
+<div #parent id="carousel">
+
+  <button id="left" type="button" name="button" (click)="slideLeft()"><</button>
+  <img *ngFor="let src of images" src={{src}}/>
+  <button id="right" type="button" name="button" (click)="slideRight()">></button>
+</div>
