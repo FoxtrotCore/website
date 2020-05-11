@@ -30,7 +30,7 @@ export class QuestionComponent implements OnInit {
     }[this.collapse.toString()];
 
     var button = this.parent.nativeElement.querySelector('button');
-    var content = this.parent.nativeElement.querySelector('.content');
+    var content = this.parent.nativeElement.querySelector('.answers');
     this.renderer.setStyle(content, 'animation-play-state', 'running');
     this.renderer.setStyle(content, 'animation-name', animate[0]);
     button.innerText = animate[2];

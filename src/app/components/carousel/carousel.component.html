@@ -1,6 +1,6 @@
 <div #parent id="carousel">
-
-  <button id="left" type="button" name="button" (click)="slideLeft()"><</button>
-  <img *ngFor="let src of images" src={{src}}/>
-  <button id="right" type="button" name="button" (click)="slideRight()">></button>
+  <button disabled id="left" type="button" name="button" (click)="slideLeft()"><</button>
+  <app-spinner msg="Loading carousel images..."></app-spinner>
+  <img *ngFor="let src of images" (load)="checkLoaded()" src={{src}}/>
+  <button disabled id="right" type="button" name="button" (click)="slideRight()">></button>
 </div>

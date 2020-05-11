@@ -1,22 +1,29 @@
 <div #root class="content">
-  <a id="downloadall" class='sublink' href="{{true}}">Download All</a>
 
-  <table>
-    <tr class='banner'>
-      <th>Episode</th>
-      <th>Title</th>
-      <th>US Air-Date</th>
-      <th>French Air-Date</th>
-      <th>Production Code</th>
-      <th>Subtitle File</th>
-    </tr>
-    <tr class="entry" id="entry-{{entry}}" *ngFor="let entry of available.available_episodes">
-      <td>{{entry}}</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td><a class="sublink" href={{true}}>Download Ep. {{entry}}</a></td>
-    </tr>
-  </table>
+  <app-spinner msg="Fetching Subtitles..."></app-spinner>
+
+  <div class="async-content">
+    <a id="downloadall" class='sublink' href="{{true}}">Download All</a>
+
+    <table>
+      <tr class='banner'>
+        <th>Episode</th>
+        <th>Title</th>
+        <th>US Air-Date</th>
+        <th>French Air-Date</th>
+        <th>Production Code</th>
+        <th>Subtitle File</th>
+      </tr>
+      <tr class="entry" id="entry-{{entry}}" *ngFor="let entry of available.available_episodes">
+        <td>{{entry}}</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><a class="sublink" href ="/subtitles">Download Ep. {{entry}}</a></td>
+      </tr>
+    </table>
+  </div>
 </div>
+
+<app-footer></app-footer>

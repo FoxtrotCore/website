@@ -13,6 +13,8 @@ import { ErrorComponent } from './components/error/error.component';
 import { QuestionComponent } from './components/question/question.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CarouselComponent } from './components/carousel/carousel.component';
+import { SpinnerComponent } from './components/spinner/spinner.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { CarouselComponent } from './components/carousel/carousel.component';
     FaqComponent,
     ErrorComponent,
     QuestionComponent,
-    CarouselComponent
+    CarouselComponent,
+    SpinnerComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

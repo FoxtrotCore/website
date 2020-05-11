@@ -9,16 +9,47 @@ import { manifest } from 'src/assets/carousel_manifest';
 export class CarouselComponent implements OnInit {
   images: String[];
   position: number;
+  loaded: number;
 
   constructor(private renderer: Renderer2) {
+    this.loaded = 0;
     this.position = 1;
     this.images = manifest;
   }
   @ViewChild('parent', { static: false }) parent: { nativeElement: { querySelector: (arg0: string) => any; }; };
   ngOnInit(): void {}
 
-  ngAfterViewInit(): void {
-    this.swap(this.position, this.position);
+  ngAfterViewInit(): void { this.disableCarousel(); }
+
+  checkLoaded() {
+    this.loaded += 1;
+
+    if(this.loaded == this.images.length){
+      console.log("Imgaes loaded: " + this.loaded);
+      this.enableCarousel();
+    }
+  }
+
+  enableCarousel(){
+    var first_img = this.parent.nativeElement.querySelector('img:nth-of-type(1)');
+    var spinner = this.parent.nativeElement.querySelector('app-spinner');
+    var left = this.parent.nativeElement.querySelector('#left');
+    var right = this.parent.nativeElement.querySelector('#right');
+    this.renderer.setStyle(spinner, 'display', 'none');
+    this.renderer.setStyle(first_img, 'display', 'inline');
+    left.removeAttribute('disabled');
+    right.removeAttribute('disabled');
+  }
+
+  disableCarousel(){
+    var first_img = this.parent.nativeElement.querySelector('img:nth-of-type(1)');
+    var spinner = this.parent.nativeElement.querySelector('app-spinner');
+    var left = this.parent.nativeElement.querySelector('#left');
+    var right = this.parent.nativeElement.querySelector('#right');
+    this.renderer.setStyle(spinner, 'display', 'inline');
+    this.renderer.setStyle(first_img, 'display', 'none');
+    left.setAttribute('disabled', '');
+    right.setAttribute('disabled', '');
   }
 
   slideLeft(): void {

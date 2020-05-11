@@ -1,7 +1,9 @@
 #carousel {
+  display: flex;
   width: 68vw;
   height: 45vw;
-  padding-bottom: 2em;
+  margin-bottom: 2em;
+  background-color: rgba(25, 25, 25, 0.1);
 }
 
 img {
@@ -14,10 +16,15 @@ button {
   width: 4vw;
   height: 100%;
   margin: auto 0;
-  display: inline;
+  display: inline-block;
   background-color: rgba(140, 140, 140, 0.9);
   border-width: 0;
 }
 
 #left { float: left; }
 #right { float: right; }
+
+app-spinner {
+  position: relative;
+  top: 30%;
+}
