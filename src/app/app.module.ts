@@ -32,7 +32,9 @@ import { CarouselComponent } from './components/carousel/carousel.component';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    HttpClientModule
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,12 +1,14 @@
 import { TestBed } from '@angular/core/testing';
-
 import { FtfApiService } from './ftf-api.service';
+import { HttpClient, HttpHandler } from '@angular/common/http';
 
 describe('FtfApiService', () => {
   let service: FtfApiService;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
+    TestBed.configureTestingModule({
+      providers: [ HttpClient, HttpHandler ]
+    });
     service = TestBed.inject(FtfApiService);
   });
 

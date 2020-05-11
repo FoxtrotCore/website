@@ -2,6 +2,7 @@ import { Component, Renderer2, ViewChild, AfterViewInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { routerTransition } from './app-routing-animation';
 
+
 @Component({
   selector: 'app-root',
   animations: [ routerTransition ],
@@ -33,7 +34,7 @@ export class AppComponent implements AfterViewInit {
     this.titleService.setTitle(this.page_title);
   }
 
-  setStyle(element, style, value): void {
+  setStyle(element: string, style: string, value: string): void {
     this.renderer.setStyle(this.parent.nativeElement.querySelector(element), style, value);
   }
 
