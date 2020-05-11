@@ -13,7 +13,7 @@
   font-weight: bolder;
 }
 
-.content {
+.answers {
   position: relative;
   background: rgba(255, 255, 255, 0.4);
   animation-fill-mode: both;
@@ -22,7 +22,7 @@
   animation-timing-function: ease-in;
   animation-play-state: paused;
 }
-.content p { display: inline-block; padding: 0.5em 4em; }
+.answers p { display: inline-block; padding: 0.5em 4em; }
 
 .label { color: rgba(64, 0, 64); font-weight: bolder; margin-right: 1em; }
 

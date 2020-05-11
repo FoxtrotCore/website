@@ -23,7 +23,7 @@ export class AppComponent implements AfterViewInit {
     this.updatePage();
   }
 
-  @ViewChild('parent', { static: false }) parent;
+  @ViewChild('root', { static: false }) root: { nativeElement: { querySelector: (arg0: string) => any; }; };
   ngAfterViewInit() {
     this.setStyle('#logo', 'background-size', this.icon_size);
     this.setStyle('#logo', 'width', this.icon_size);
@@ -35,7 +35,7 @@ export class AppComponent implements AfterViewInit {
   }
 
   setStyle(element: string, style: string, value: string): void {
-    this.renderer.setStyle(this.parent.nativeElement.querySelector(element), style, value);
+    this.renderer.setStyle(this.root.nativeElement.querySelector(element), style, value);
   }
 
   getState(outlet) {
