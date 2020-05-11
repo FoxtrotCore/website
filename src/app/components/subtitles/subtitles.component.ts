@@ -22,11 +22,6 @@ export class SubtitlesComponent implements OnInit {
     this.api.getAvailable().subscribe(data => {this.available = data});
   }
 
-  downloadAll(): void {
-    // TODO: Make this do a thing
-    console.log(":tada:");
-  }
-
   getEpisodeData(ep: Number) {
     return this.ep_data.find(e => e['number'] == ep);
   }
@@ -34,6 +29,9 @@ export class SubtitlesComponent implements OnInit {
   @ViewChild('root', { static: false }) root: { nativeElement: { querySelector: (arg0: string) => any; }; };
   ngOnInit(): void {}
   ngAfterViewInit(): void {
+    var downloadall_element = this.root.nativeElement.querySelector('#downloadall');
+    downloadall_element.setAttribute('href', this.api.getScriptLink('all'));
+
     for(var ep in this.available.available_episodes){
       const root_selector = '#entry-' + ep;
       var title_element = this.root.nativeElement.querySelector(root_selector + '> td:nth-child(2)');
@@ -47,7 +45,7 @@ export class SubtitlesComponent implements OnInit {
       us_element.innerText = data['us_airdate'];
       fr_element.innerText = data['fr_airdate'];
       prod_element.innerText = data['prod_code'];
-      sub_element.setAttribute('href', this.api.getDownloadLink(new Number(ep)));
+      sub_element.setAttribute('href', this.api.getScriptLink(ep));
     }
   }
 }

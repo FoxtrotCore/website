@@ -1,5 +1,5 @@
 <div #root class="content">
-  <button type="button" name="download-all" (click)="downloadAll()">Download All Subtitles</button>
+  <a id="downloadall" class='sublink' href="{{true}}">Download All</a>
 
   <table>
     <tr class='banner'>
@@ -16,7 +16,7 @@
       <td></td>
       <td></td>
       <td></td>
-      <td><a href={{true}}>ASS</a></td>
+      <td><a class="sublink" href={{true}}>Download Ep. {{entry}}</a></td>
     </tr>
   </table>
 </div>

@@ -7,7 +7,13 @@
     </div>
   </div>
 
-  <div [@routerTransition]="getState(o)">
+  <div id="main-app" [@routerTransition]="getState(o)">
       <router-outlet #o="outlet"></router-outlet>
+  </div>
+
+  <div id="nosupport">
+    <h3>Sorry For the inconvenience</h3>
+    <p>This website currently does not support mobile.</p>
+    <p>:(</p>
   </div>
 </div>
