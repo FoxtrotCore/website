@@ -16,8 +16,20 @@ export class FtfApiService {
     return this.http.get<AvailabilityForm>(this.base_url + uri, {observe: 'body'});
   }
 
-  getDownloadLink(ep: Number) {
+  getScriptLink(ep: String) {
+    if(ep != 'all') {
+      try{ new Number(ep); }
+      catch(e){
+        console.error(e);
+        return null;
+      }
+    }
+
     return this.base_url + '/script?episode=' + ep;
+  }
+
+  getSubtitlesZipLink() {
+    return this.base_url + '/script?episode=all'
   }
 
   handle_error(e: HttpErrorResponse) { return throwError(e); }

@@ -16,3 +16,18 @@ body {
   background-color: #2d2d2d;
   overflow-y: scroll;
 }
+
+.content, #nosupport {
+  margin: 5vh auto;
+  padding: 5vw;
+  width: 80vw;
+  background-color: rgba(220, 220, 220, 0.9);
+  box-shadow: black 3em 3em 100px;
+}
+
+#nosupport { display: none; }
+
+@media (min-width: 0px) and (max-width:760px) {
+  #main-app, app-menu { display: none; }
+  #nosupport { display: inline-block; }
+}
