@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { FaqComponent } from './faq.component';
+import { AppComponent } from 'src/app/app.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('FaqComponent', () => {
   let component: FaqComponent;
@@ -8,7 +9,8 @@ describe('FaqComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FaqComponent ]
+      declarations: [ FaqComponent ],
+      providers: [ AppComponent, NoopAnimationsModule ]
     })
     .compileComponents();
   }));

@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { AppComponent } from 'src/app/app.component';
 import { SubtitlesComponent } from './subtitles.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClient, HttpHandler } from '@angular/common/http';
 
 describe('SubtitlesComponent', () => {
   let component: SubtitlesComponent;
@@ -8,7 +10,8 @@ describe('SubtitlesComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SubtitlesComponent ]
+      declarations: [ SubtitlesComponent ],
+      providers: [ HttpClient, HttpHandler, AppComponent, NoopAnimationsModule ]
     })
     .compileComponents();
   }));
