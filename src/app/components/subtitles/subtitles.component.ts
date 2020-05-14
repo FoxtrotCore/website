@@ -49,8 +49,10 @@ export class SubtitlesComponent implements OnInit {
     var downloadall_element = this.root.nativeElement.querySelector('#downloadall');
     downloadall_element.setAttribute('href', this.api.getScriptLink('all'));
 
-    for(var ep in this.available.available_episodes){
+    for(var i = 0; i < this.available.available_episodes.length; ++i){
+      const ep = this.available.available_episodes[i];
       const root_selector = '#entry-' + ep;
+
       var title_element = this.root.nativeElement.querySelector(root_selector + '> td:nth-child(2)');
       var us_element = this.root.nativeElement.querySelector(root_selector + '> td:nth-child(3)');
       var fr_element = this.root.nativeElement.querySelector(root_selector + '> td:nth-child(4)');
@@ -62,7 +64,8 @@ export class SubtitlesComponent implements OnInit {
       us_element.innerText = data['us_airdate'];
       fr_element.innerText = data['fr_airdate'];
       prod_element.innerText = data['prod_code'];
-      sub_element.setAttribute('href', this.api.getScriptLink(ep));
+
+      sub_element.setAttribute('href', this.api.getScriptLink(String(ep)));
     }
   }
 
