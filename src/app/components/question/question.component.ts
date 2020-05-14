@@ -5,7 +5,7 @@ function sleep(delay: number) { return new Promise( resolve => setTimeout(resolv
 @Component({
   selector: 'app-question',
   templateUrl: './question.component.html',
-  styleUrls: ['./question.component.css']
+  styleUrls: ['./question.component.css'],
 })
 
 export class QuestionComponent implements OnInit {
@@ -26,11 +26,12 @@ export class QuestionComponent implements OnInit {
 
     var animate = {
       'true': ['collapse', 'none', '+'],
-      'false': ['expand', 'inline-block', "X"]
+      'false': ['expand', 'inline-block', "-"]
     }[this.collapse.toString()];
 
     var button = this.parent.nativeElement.querySelector('button');
     var content = this.parent.nativeElement.querySelector('.answers');
+
     this.renderer.setStyle(content, 'animation-play-state', 'running');
     this.renderer.setStyle(content, 'animation-name', animate[0]);
     button.innerText = animate[2];
