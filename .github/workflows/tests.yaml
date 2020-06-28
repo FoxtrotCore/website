@@ -55,4 +55,9 @@ jobs:
         rm -rf dist
     - run: git add -A
     - run: git commit -am "Website Build"
-    - run: git push origin --delete prod
+    - name: Delete prod if already exists
+      run: |
+        if [[ -n "$(git ls-remote --heads origin prod)" ]]; then
+          git push origin --delete prod
+        fi
+    - run: git push origin prod
