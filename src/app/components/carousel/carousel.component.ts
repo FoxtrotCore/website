@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewChild, Renderer2 } from '@angular/core';
-import { manifest } from 'src/assets/carousel_manifest';
+import { GcsService } from 'src/app/services/gcs.service';
+// import { manifest } from 'src/assets/carousel_manifest';
+import { common } from 'src/environments/common';
 
 @Component({
   selector: 'app-carousel',
@@ -11,10 +13,16 @@ export class CarouselComponent implements OnInit {
   position: number;
   loaded: number;
 
-  constructor(private renderer: Renderer2) {
+  constructor(private renderer: Renderer2, private gcs: GcsService) {
     this.loaded = 0;
     this.position = 1;
-    this.images = manifest;
+    this.images = [];
+
+    console.log('Out: ' + JSON.stringify(gcs.getImagesList()));
+
+    for(var i = 0; i < 32; ++i) {
+      this.images.push(common.carousel_imgs + gcs.num_to_img(i));
+    }
   }
   @ViewChild('parent', { static: false }) parent: { nativeElement: { querySelector: (arg0: string) => any; }; };
   ngOnInit(): void {}
