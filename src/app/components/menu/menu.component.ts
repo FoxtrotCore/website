@@ -6,7 +6,7 @@ import { Entry } from '../../models/Entry'
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.css']
 })
-export class MenuComponent implements OnInit {
+export class Menu implements OnInit {
   entries: Entry[];
 
   constructor() { }

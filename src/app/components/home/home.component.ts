@@ -6,7 +6,7 @@ import { AppComponent } from '../../app.component';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
+export class HomePage implements OnInit {
 
   constructor(@Inject(AppComponent) private parent: AppComponent) {
     this.parent.page_title = "Team Foxtrot";

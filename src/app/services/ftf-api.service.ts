@@ -2,18 +2,18 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { throwError, Observable } from 'rxjs';
 import { AvailabilityForm } from 'src/app/models/AvailabilityForm';
+import { common } from 'src/environments/common';
 
 @Injectable({
   providedIn: 'root'
 })
-export class FtfApiService {
-  readonly base_url = "https://api.foxtrotfanatics.com";
 
-  constructor(private http: HttpClient) {}
+export class FtfApiService {
+  constructor(private http: HttpClient){}
 
   getAvailable(): Observable<AvailabilityForm> {
     const uri = '/available';
-    return this.http.get<AvailabilityForm>(this.base_url + uri, {observe: 'body'});
+    return this.http.get<AvailabilityForm>(common.ftf_api + uri, {observe: 'body'});
   }
 
   getScriptLink(ep: String) {
@@ -25,11 +25,11 @@ export class FtfApiService {
       }
     }
 
-    return this.base_url + '/script?episode=' + ep;
+    return common.ftf_api + '/script?episode=' + ep;
   }
 
   getSubtitlesZipLink() {
-    return this.base_url + '/script?episode=all'
+    return common.ftf_api + '/script?episode=all';
   }
 
   handle_error(e: HttpErrorResponse) { return throwError(e); }

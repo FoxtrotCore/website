@@ -5,12 +5,12 @@ import { MarkdownModule } from 'ngx-markdown';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MenuComponent } from './components/menu/menu.component';
-import { HomeComponent } from './components/home/home.component';
+import { Menu } from './components/menu/menu.component';
+import { HomePage } from './components/home/home.component';
 import { OurWorkComponent } from './components/our-work/our-work.component';
 import { SubtitlesComponent } from './components/subtitles/subtitles.component';
 import { FaqComponent } from './components/faq/faq.component';
-import { ErrorComponent } from './components/error/error.component';
+import { ErrorPage } from './components/error/error.component';
 import { QuestionComponent } from './components/question/question.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CarouselComponent } from './components/carousel/carousel.component';
@@ -20,12 +20,12 @@ import { FooterComponent } from './components/footer/footer.component';
 @NgModule({
   declarations: [
     AppComponent,
-    MenuComponent,
-    HomeComponent,
+    Menu,
+    HomePage,
     OurWorkComponent,
     SubtitlesComponent,
     FaqComponent,
-    ErrorComponent,
+    ErrorPage,
     QuestionComponent,
     CarouselComponent,
     SpinnerComponent,
@@ -43,4 +43,4 @@ import { FooterComponent } from './components/footer/footer.component';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
