@@ -32,6 +32,9 @@ module.exports = function (config) {
         flags: ['--no-sandbox']
       }
     },
+    proxies: {
+      '/assets/': '/base/src/assets/'
+    },
     singleRun: false,
     restartOnFileChange: true
   });

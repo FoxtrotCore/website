@@ -17,42 +17,13 @@ jobs:
     - name: Setup NodeJS
       uses: actions/setup-node@v1
       with:
-        node-version: 14.x
-    - run: npm ci
-    - run: npm run build --if-present
-    - run: npm test
+        node-version: 12.X
 
-  build:
-    name: Building to `prod` branch
+    - name: Install dependencies
+      run: npm ci
 
-    runs-on: ubuntu-latest
-    needs: tests
+    - name: Build project
+      run: npm run build --if-present
 
-    steps:
-    - uses: actions/checkout@v2
-    - name: Setup NodeJS
-      uses: actions/setup-node@v1
-      with:
-        node-version: 14.x
-    - run: npm ci
-    - run: npm run build --if-present
-    - name: Configure git credentials
-      run: |
-        git config --global user.email "hello@foxtrotfanatics.com"
-        git config --global user.name "Foxtrot Fanatics"
-    - run: git checkout -B prod
-    - run: npm run-script build
-    - name: Exclude non-prod content
-      run: |
-        FILES=$(ls -I Dockerfile -I dist)
-        rm -rf $FILES
-        mv dist/website/* .
-        rm -rf dist
-    - run: git add -A
-    - run: git commit -am "Website Build"
-    - name: Delete prod if already exists
-      run: |
-        if [[ -n "$(git ls-remote --heads origin prod)" ]]; then
-          git push origin --delete prod
-        fi
-    - run: git push origin prod
+    # - name: Run unit tests
+    #   run: npm test

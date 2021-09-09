@@ -1,6 +1,6 @@
 name: deploy
 
-Con:
+on:
   release:
     types: published
 
